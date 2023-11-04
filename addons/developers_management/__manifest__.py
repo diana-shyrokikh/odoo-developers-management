@@ -1,0 +1,17 @@
+{
+    "name": "Developers Management",
+    "version": "1.0.0",
+    "category": "Developers",
+    "summary": "Developers management system",
+    "description": """Developers management system""",
+    "depends": [],
+    "data": [],
+    "demo": [],
+    "installable": True,
+    "auto_install": False,
+    "license": "LGPL-3",
+    "application": True,
+    "sequence": -100,
+    "author": "Diana Shyrokikh",
+    "assets": {},
+}
