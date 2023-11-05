@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!--     <record id="view_develovers_management_developer_search"-->
+<!--            model="ir.ui.view"-->
+<!--     >-->
+<!--        <field name="name">hospital.patient.search</field>-->
+<!--        <field name="model">hospital.patient</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <search>-->
+<!--                <field name="name"-->
+<!--                       string="Patient Name"-->
+<!--                       filter_domain="[-->
+<!--                           '|',-->
+<!--                           ('name', 'ilike', self),-->
+<!--                           ('ref', 'ilike', self)-->
+<!--                       ]"-->
+<!--                />-->
+<!--                <field name="ref"/>-->
+<!--                <field name="age"/>-->
+<!--                <field name="gender"/>-->
+
+<!--                <filter name="filter_male"-->
+<!--                        string="Male"-->
+<!--                        domain="[-->
+<!--                            ('gender', '=', 'male')-->
+<!--                        ]"-->
+<!--                />-->
+<!--                <filter name="filter_female"-->
+<!--                        string="Female"-->
+<!--                        domain="[-->
+<!--                            ('gender', '=', 'female')-->
+<!--                        ]"-->
+<!--                />-->
+<!--                <separator/>-->
+<!--                <filter name="filter_kids"-->
+<!--                        string="Kids"-->
+<!--                        domain="[-->
+<!--                            ('age', '&lt;=', '5')-->
+<!--                        ]"-->
+<!--                />-->
+<!--                <separator/>-->
+<!--                <filter name="filter_archived"-->
+<!--                        string="Archived"-->
+<!--                        domain="[-->
+<!--                            ('active', '=', False)-->
+<!--                        ]"-->
+<!--                />-->
+
+<!--                <group expand="0" string="Group By">-->
+<!--                    <filter string="Gender"-->
+<!--                            name="group_by_gender"-->
+<!--                            context="{-->
+<!--                                'group_by': 'gender'-->
+<!--                            }"-->
+<!--                    />-->
+<!--                </group>-->
+
+<!--                <searchpanel>-->
+<!--                    <field name="gender"-->
+<!--                           string="Gender"-->
+<!--                           enable_counters="1"-->
+<!--                           icon="fa-users"-->
+<!--                           select="multi"-->
+<!--                    />-->
+<!--                </searchpanel>-->
+<!--            </search>-->
+<!--        </field>-->
+<!--    </record>-->
+
+    <record id="view_developers_management_developer_tree"
+            model="ir.ui.view"
+    >
+        <field name="name">developers_management.developer.tree</field>
+        <field name="model">developers_management.developer</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" string="Developer Name"/>
+                <field name="type"/>
+                <field name="global_identification"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="date_of_birth"/>
+                <field name="address"/>
+                <field name="gender"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_developers_management_developer_form"
+            model="ir.ui.view"
+    >
+        <field name="name">developers_management.developer.form</field>
+        <field name="model">developers_management.developer</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="type"/>
+                            <field name="global_identification" invisible="1"/>
+                            <field name="gender"/>
+                            <field name="date_of_birth"/>
+                        </group>
+                        <group>
+                            <field name="phone"
+                                   attrs="{
+                                       'invisible': [('type', '=', 'out-stuff')]
+                                   }"
+                            />
+                            <field name="email"/>
+                            <field name="address"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           groups="base.group_user"
+                    />
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_developers_management_developer"
+            model="ir.actions.act_window"
+    >
+        <field name="name">Developers</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">developers_management.developer</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create the first developer!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_developer"
+              name="Developers"
+              action="action_developers_management_developer"
+              parent="menu_developer_master"
+              sequence="0"
+    />
+
+</odoo>

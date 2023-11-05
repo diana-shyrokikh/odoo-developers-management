@@ -4,8 +4,14 @@
     "category": "Developers",
     "summary": "Developers management system",
     "description": """Developers management system""",
-    "depends": [],
-    "data": [],
+    "depends": [
+        "mail",
+    ],
+    "data": [
+        "security/ir.model.access.csv",
+        "views/menu.xml",
+        "views/developer_view.xml",
+    ],
     "demo": [],
     "installable": True,
     "auto_install": False,

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_developers_management_root"
+              name="Developers Management"
+              sequence="0"
+    />
+
+    <menuitem id="menu_developer_master"
+              name="Developers"
+              parent="menu_developers_management_root"
+              sequence="0"
+    />
+
+</odoo>
