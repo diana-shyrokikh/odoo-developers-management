@@ -1,72 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-<!--     <record id="view_develovers_management_developer_search"-->
-<!--            model="ir.ui.view"-->
-<!--     >-->
-<!--        <field name="name">hospital.patient.search</field>-->
-<!--        <field name="model">hospital.patient</field>-->
-<!--        <field name="arch" type="xml">-->
-<!--            <search>-->
-<!--                <field name="name"-->
-<!--                       string="Patient Name"-->
-<!--                       filter_domain="[-->
-<!--                           '|',-->
-<!--                           ('name', 'ilike', self),-->
-<!--                           ('ref', 'ilike', self)-->
-<!--                       ]"-->
-<!--                />-->
-<!--                <field name="ref"/>-->
-<!--                <field name="age"/>-->
-<!--                <field name="gender"/>-->
+     <record id="view_develovers_management_developer_search"
+             model="ir.ui.view"
+     >
+        <field name="name">developers_management.developer.search</field>
+        <field name="model">developers_management.developer</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"
+                       string="Developer Name"
+                />
+                <field name="type"/>
+                <field name="gender"/>
+                <field name="phone"/>
 
-<!--                <filter name="filter_male"-->
-<!--                        string="Male"-->
-<!--                        domain="[-->
-<!--                            ('gender', '=', 'male')-->
-<!--                        ]"-->
-<!--                />-->
-<!--                <filter name="filter_female"-->
-<!--                        string="Female"-->
-<!--                        domain="[-->
-<!--                            ('gender', '=', 'female')-->
-<!--                        ]"-->
-<!--                />-->
-<!--                <separator/>-->
-<!--                <filter name="filter_kids"-->
-<!--                        string="Kids"-->
-<!--                        domain="[-->
-<!--                            ('age', '&lt;=', '5')-->
-<!--                        ]"-->
-<!--                />-->
-<!--                <separator/>-->
-<!--                <filter name="filter_archived"-->
-<!--                        string="Archived"-->
-<!--                        domain="[-->
-<!--                            ('active', '=', False)-->
-<!--                        ]"-->
-<!--                />-->
+                <filter name="filter_man"
+                        string="Male"
+                        domain="[
+                            ('gender', '=', 'male')
+                        ]"
+                />
+                <filter name="filter_female"
+                        string="Female"
+                        domain="[
+                            ('gender', '=', 'female')
+                        ]"
+                />
+                <separator/>
+                <filter name="filter_archived"
+                        string="Archived"
+                        domain="[
+                            ('active', '=', False)
+                        ]"
+                />
 
-<!--                <group expand="0" string="Group By">-->
-<!--                    <filter string="Gender"-->
-<!--                            name="group_by_gender"-->
-<!--                            context="{-->
-<!--                                'group_by': 'gender'-->
-<!--                            }"-->
-<!--                    />-->
-<!--                </group>-->
+                <group expand="0" string="Group By">
+                    <filter string="Type"
+                            name="group_by_type"
+                            context="{
+                                'group_by': 'type'
+                            }"
+                    />
+                </group>
 
-<!--                <searchpanel>-->
-<!--                    <field name="gender"-->
-<!--                           string="Gender"-->
-<!--                           enable_counters="1"-->
-<!--                           icon="fa-users"-->
-<!--                           select="multi"-->
-<!--                    />-->
-<!--                </searchpanel>-->
-<!--            </search>-->
-<!--        </field>-->
-<!--    </record>-->
+                <searchpanel>
+                    <field name="type"
+                           string="Type"
+                           enable_counters="1"
+                           icon="fa-users"
+                           select="multi"
+                    />
+                </searchpanel>
+            </search>
+        </field>
+    </record>
 
     <record id="view_developers_management_developer_tree"
             model="ir.ui.view"
