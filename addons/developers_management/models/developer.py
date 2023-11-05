@@ -1,9 +1,7 @@
-# from datetime import date
-
 from odoo import api, fields, models
 
 
-class HospitalPatient(models.Model):
+class Developer(models.Model):
     _name = "developers_management.developer"
     _inherit = [
         "mail.thread",
@@ -43,8 +41,6 @@ class HospitalPatient(models.Model):
         string="Global Identification",
     )
     phone = fields.Char(
-        # compute="_compute_phone",
-        # store=True,
         string="Phone Number",
         tracking=True,
     )
@@ -77,13 +73,4 @@ class HospitalPatient(models.Model):
     def _compute_global_identification(self):
         for developer in self:
             developer.global_identification = f"{developer.name}-{developer.type}"
-
-    # @api.depends("type")
-    # def _compute_phone(self):
-    #     for developer in self:
-    #         if developer.type != 'out-stuff':
-    #             developer.phone = developer.phone
-    #         else:
-    #             developer.phone = False
-
 
