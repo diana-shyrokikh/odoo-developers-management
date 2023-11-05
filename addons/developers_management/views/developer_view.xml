@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-     <record id="view_develovers_management_developer_search"
+    <record id="view_develovers_management_developer_search"
              model="ir.ui.view"
-     >
+    >
         <field name="name">developers_management.developer.search</field>
         <field name="model">developers_management.developer</field>
         <field name="arch" type="xml">
@@ -141,9 +141,25 @@
 
     </record>
 
+    <record model="res.groups" id="group_developer_users">
+        <field name="name">Developer Users</field>
+    </record>
+
+    <record id="access_developer_user" model="ir.model.access">
+        <field name="name">Developer User Access</field>
+        <field name="model_id" ref="model_developers_management_developer"/>
+        <field name="group_id" ref="group_developer_users"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
     <menuitem id="menu_developer_view"
               name="View Developers"
               action="action_developers_management_developer_tree"
+              groups="group_developer_users"
               parent="menu_developer_master"
               sequence="1"
     />
@@ -151,6 +167,7 @@
     <menuitem id="menu_developer_add"
               name="Add Developers"
               action="action_developers_management_developer_form"
+              groups="group_developer_users"
               parent="menu_developer_master"
               sequence="2"
     />
