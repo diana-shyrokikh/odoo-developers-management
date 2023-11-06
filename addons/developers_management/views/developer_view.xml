@@ -14,6 +14,7 @@
                 <field name="type"/>
                 <field name="gender"/>
                 <field name="phone"/>
+                <field name="position"/>
 
                 <filter name="filter_man"
                         string="Male"
@@ -66,6 +67,7 @@
                 <field name="name" string="Developer Name"/>
                 <field name="type"/>
                 <field name="global_identification"/>
+                <field name="position"/>
                 <field name="email"/>
                 <field name="phone"/>
                 <field name="date_of_birth"/>
@@ -88,6 +90,7 @@
                             <field name="name"/>
                             <field name="type"/>
                             <field name="global_identification" invisible="1"/>
+                            <field name="position"/>
                             <field name="gender"/>
                             <field name="date_of_birth"/>
                         </group>

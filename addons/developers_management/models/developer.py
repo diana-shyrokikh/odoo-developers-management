@@ -67,6 +67,10 @@ class Developer(models.Model):
         default=True,
         tracking=True,
     )
+    position = fields.Char(
+        string="Position",
+        tracking=True,
+    )
 
 
     @api.depends("name", "type")
