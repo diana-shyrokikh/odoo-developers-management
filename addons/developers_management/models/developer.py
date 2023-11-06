@@ -26,7 +26,7 @@ class Developer(models.Model):
         string="Name",
         tracking=True,
         required=True,
-        unique=True,
+        # unique=True,
     )
     type = fields.Selection(
         TYPES,
@@ -71,6 +71,10 @@ class Developer(models.Model):
         string="Position",
         tracking=True,
     )
+
+    _sql_constraints = [
+        ('name_uniq', 'unique (name)', 'The name must be unique!'),
+    ]
 
 
     @api.depends("name", "type")
