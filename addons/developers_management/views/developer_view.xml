@@ -63,7 +63,7 @@
         <field name="name">developers_management.developer.tree</field>
         <field name="model">developers_management.developer</field>
         <field name="arch" type="xml">
-            <tree create="false">
+            <tree create="false" editable="top">
                 <field name="name" string="Developer Name"/>
                 <field name="type"/>
                 <field name="global_identification"/>
