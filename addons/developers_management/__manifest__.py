@@ -11,6 +11,7 @@
         "security/ir.model.access.csv",
         "views/menu.xml",
         "views/developer_view.xml",
+        "views/company_view.xml",
     ],
     "demo": [],
     "installable": True,
