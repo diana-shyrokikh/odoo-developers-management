@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_developers_management_company_search"
+             model="ir.ui.view"
+    >
+        <field name="name">developers_management.company.search</field>
+        <field name="model">developers_management.company</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Company Name"/>
+                <field name="address"/>
+
+                <filter name="filter_archived"
+                        string="Archived"
+                        domain="[
+                            ('active', '=', False)
+                        ]"
+                />
+            </search>
+        </field>
+    </record>
+
+    <record id="view_developers_management_company_tree"
+            model="ir.ui.view"
+    >
+        <field name="name">developers_management.company.tree</field>
+        <field name="model">developers_management.company</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" string="Company Name"/>
+                <field name="address"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="view_developers_management_company_form"
+            model="ir.ui.view"
+    >
+        <field name="name">developers_management.company.form</field>
+        <field name="model">developers_management.company</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="address"/>
+                        <field name="developers"
+                               widget="many2many_tags"
+                        />
+                        <field name="active" invisible="1"/>
+
+                    </group>
+                </sheet>
+
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           groups="base.group_user"
+                    />
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_developers_management_company"
+            model="ir.actions.act_window"
+    >
+        <field name="name">Companies</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">developers_management.company</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create the first company!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_company_view"
+              name="View Companies"
+              action="action_developers_management_company"
+              groups="group_developer_users"
+              parent="menu_company_master"
+              sequence="1"
+    />
+
+</odoo>
