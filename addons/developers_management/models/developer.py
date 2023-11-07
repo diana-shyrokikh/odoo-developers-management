@@ -26,11 +26,10 @@ class Developer(models.Model):
         string="Name",
         tracking=True,
         required=True,
-        # unique=True,
     )
     type = fields.Selection(
         TYPES,
-        string="Types",
+        string="Type",
         tracking=True,
         required=True
     )
@@ -71,14 +70,19 @@ class Developer(models.Model):
         string="Position",
         tracking=True,
     )
+    company_id = fields.Many2one(
+        comodel_name="developers_management.company",
+        string="Company"
+    )
 
-    _sql_constraints = [
-        ('name_uniq', 'unique (name)', 'The name must be unique!'),
-    ]
+    _sql_constraints = [(
+        "name_uniq",
+        "unique (name)",
+        "The name must be unique!"
+    ),]
 
 
     @api.depends("name", "type")
     def _compute_global_identification(self):
         for developer in self:
             developer.global_identification = f"{developer.name}-{developer.type}"
-
