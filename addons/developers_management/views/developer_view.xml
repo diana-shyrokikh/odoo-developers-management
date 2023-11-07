@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record id="view_develovers_management_developer_search"
+    <record id="view_developers_management_developer_search"
              model="ir.ui.view"
     >
         <field name="name">developers_management.developer.search</field>
@@ -15,6 +15,7 @@
                 <field name="gender"/>
                 <field name="phone"/>
                 <field name="position"/>
+                <field name="company_id"/>
 
                 <filter name="filter_man"
                         string="Male"
@@ -43,6 +44,12 @@
                                 'group_by': 'type'
                             }"
                     />
+                    <filter string="Company"
+                            name="group_by_company"
+                            context="{
+                                'group_by': 'company_id'
+                            }"
+                    />
                 </group>
 
                 <searchpanel>
@@ -51,6 +58,11 @@
                            enable_counters="1"
                            icon="fa-users"
                            select="multi"
+                    />
+                    <field name="company_id"
+                           string="Company"
+                           enable_counters="1"
+                           icon="fa-black-tie "
                     />
                 </searchpanel>
             </search>
@@ -68,6 +80,7 @@
                 <field name="type"/>
                 <field name="global_identification"/>
                 <field name="position"/>
+                <field name="company_id"/>
                 <field name="email"/>
                 <field name="phone"/>
                 <field name="date_of_birth"/>
@@ -91,10 +104,11 @@
                             <field name="type"/>
                             <field name="global_identification" invisible="1"/>
                             <field name="position"/>
+                            <field name="company_id"/>
                             <field name="gender"/>
-                            <field name="date_of_birth"/>
                         </group>
                         <group>
+                            <field name="date_of_birth"/>
                             <field name="phone"
                                    attrs="{
                                        'invisible': [('type', '=', 'out-stuff')]
