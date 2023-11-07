@@ -9,7 +9,13 @@
     <menuitem id="menu_developer_master"
               name="Developers"
               parent="menu_developers_management_root"
-              sequence="0"
+              sequence="1"
+    />
+
+    <menuitem id="menu_company_master"
+              name="Companies"
+              parent="menu_developers_management_root"
+              sequence="2"
     />
 
 </odoo>
