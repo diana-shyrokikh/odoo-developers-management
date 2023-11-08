@@ -83,7 +83,6 @@
     <menuitem id="menu_company_view"
               name="View Companies"
               action="action_developers_management_company"
-              groups="group_developer_users"
               parent="menu_company_master"
               sequence="1"
     />

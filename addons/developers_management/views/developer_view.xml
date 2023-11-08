@@ -140,11 +140,6 @@
         <field name="res_model">developers_management.developer</field>
         <field name="view_mode">tree</field>
         <field name="context">{}</field>
-        <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">
-                Create the first developer!
-            </p>
-        </field>
     </record>
 
     <record id="action_developers_management_developer_form"
@@ -158,25 +153,9 @@
 
     </record>
 
-    <record model="res.groups" id="group_developer_users">
-        <field name="name">Developer Users</field>
-    </record>
-
-    <record id="access_developer_user" model="ir.model.access">
-        <field name="name">Developer User Access</field>
-        <field name="model_id" ref="model_developers_management_developer"/>
-        <field name="group_id" ref="group_developer_users"/>
-        <field name="perm_read" eval="True"/>
-        <field name="perm_write" eval="True"/>
-        <field name="perm_create" eval="True"/>
-        <field name="perm_unlink" eval="False"/>
-    </record>
-
-
     <menuitem id="menu_developer_view"
               name="View Developers"
               action="action_developers_management_developer_tree"
-              groups="group_developer_users"
               parent="menu_developer_master"
               sequence="1"
     />
@@ -184,7 +163,6 @@
     <menuitem id="menu_developer_add"
               name="Add Developers"
               action="action_developers_management_developer_form"
-              groups="group_developer_users"
               parent="menu_developer_master"
               sequence="2"
     />
