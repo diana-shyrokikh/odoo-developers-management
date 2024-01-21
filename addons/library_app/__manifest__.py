@@ -12,4 +12,9 @@
     "website": "https://github.com/PacktPublishing"
                "/Odoo-15-Development-Essentials",
     "category": "Services/Library",
+    "data": [
+        "security/library_security.xml",
+
+        "views/library_menu.xml",
+    ],
 }
