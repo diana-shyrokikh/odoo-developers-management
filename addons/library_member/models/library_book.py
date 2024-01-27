@@ -6,3 +6,10 @@ class Book(models.Model):
     is_available = fields.Boolean(
         string="Is Available?"
     )
+
+    isbn = fields.Char(
+        help="Use a valid ISBN-13 or ISBN - 10."
+    )
+    publisher_id = fields.Many2one(
+        index=True
+    )
