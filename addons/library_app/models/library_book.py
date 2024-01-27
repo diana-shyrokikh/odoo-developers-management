@@ -23,3 +23,6 @@ class Book(models.Model):
         "res.partner",
         string="Authors"
     )
+
+    def button_check_isbn(self):
+        pass
