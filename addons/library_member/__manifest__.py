@@ -2,7 +2,10 @@
     "name": "Library Members",
     "version": "16.0.1.0.0",
     "summary": "Manage members borrowing books.",
-    "depends": ["library_app"],
+    "depends": [
+        "library_app",
+        "mail"
+    ],
     "license": "AGPL-3",
     "application": False,
     "sequence": -199,
