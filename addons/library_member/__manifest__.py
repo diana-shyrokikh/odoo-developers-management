@@ -14,6 +14,7 @@
                "/Odoo-15-Development-Essentials",
     "category": "Services/Library",
     "data": [
+        "security/library_security.xml",
         "security/ir.model.access.csv",
 
         "views/book_view.xml",
