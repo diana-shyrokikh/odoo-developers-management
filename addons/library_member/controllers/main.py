@@ -14,4 +14,4 @@ class BooksExtended(Books):
             )
             response.qcontext["books"] = available_books
 
-            return response
+        return response
