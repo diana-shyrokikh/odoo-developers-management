@@ -12,6 +12,10 @@
     "website": "https://github.com/PacktPublishing"
                "/Odoo-15-Development-Essentials",
     "category": "Services/Library",
+    "demo": [
+        "data/res.partner.csv",
+        "data/library.book.csv",
+    ],
     "data": [
         "security/library_security.xml",
         "security/ir.model.access.csv",
