@@ -10,4 +10,9 @@
                eval="[(4, ref('res_partner_huxley'))]" />
         <field name="date_published">1932-01-01</field>
     </record>
+<!--    <delete model="res.partner" id="library_app.res_partner_daniel" />-->
+<!--    <delete-->
+<!--            model="res.partner"-->
+<!--            search="[('id','=',ref('library_app.res_partner_daniel'))]"-->
+<!--    />-->
 </odoo>
