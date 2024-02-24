@@ -4,6 +4,7 @@
     "summary": "Members can borrow books from the library.",
     "depends": [
         "library_member",
+        "mail"
     ],
     "license": "AGPL-3",
     "application": False,

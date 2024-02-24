@@ -4,6 +4,7 @@ import odoo.exceptions as exceptions
 class Checkout(models.Model):
     _name = "library.checkout"
     _description = "Checkout Request"
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
     @api.model
     def _default_stage_id(self):
@@ -61,6 +62,8 @@ class Checkout(models.Model):
             raise exceptions.UserError(
                 "State not allowed for new checkouts."
             )
+        new_record.message_subscribe(partners_ids=[self.user_id.id])
+        new_record.message_post(body="Hello", subtype_xmlid="mail.mt_comment")
         return new_record
 
     def write(self, vals):
