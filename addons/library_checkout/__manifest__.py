@@ -16,6 +16,8 @@
     "data": [
         "security/ir.model.access.csv",
 
+        "wizard/checkout_mass_message_wizard_view.xml",
+
         "views/library_menu.xml",
 
         "views/checkout_view.xml",
