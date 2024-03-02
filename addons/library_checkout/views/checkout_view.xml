@@ -48,10 +48,11 @@
                     </div>
 
                     <!-- Header fields -->
-                    <group>
-                        <field name="member_id" />
+                    <group name="group_top" col="4">
                         <field name="request_date" />
                         <field name="user_id" />
+                        <span colspan="2" />
+                        <field name="close_date" />
                     </group>
 
                     <!-- Notebook -->
