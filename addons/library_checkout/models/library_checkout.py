@@ -52,6 +52,11 @@ class Checkout(models.Model):
     checkout_date = fields.Date(readonly=True)
     close_date = fields.Date(readonly=True)
 
+    name = fields.Char(string="Title")
+    member_image = fields.Binary(
+        related="member_id.image_128"
+    )
+
     @api.model
     def create(self, vals):
         # Code before create: should use the 'vals' dict

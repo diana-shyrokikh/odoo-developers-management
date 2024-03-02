@@ -32,11 +32,29 @@
                 </header>
                 <sheet>
                     <!-- To add form content -->
+
+                    <!-- Button box -->
+                    <div class="oe_button_box" name="button_box" />
+
+                    <!-- Header title -->
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name"/></h1>
+                        <h3>
+                            <span class="oe_read_only">By </span>
+                            <label for="member_id" class="oe_edit_only"/>
+                            <field name="member_id" class="oe_inline" />
+                        </h3>
+                    </div>
+
+                    <!-- Header fields -->
                     <group>
                         <field name="member_id" />
                         <field name="request_date" />
                         <field name="user_id" />
                     </group>
+
+                    <!-- Notebook -->
                     <notebook>
                         <page name="lines">
                             <field name="line_ids">
