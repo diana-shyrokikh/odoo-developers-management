@@ -59,10 +59,12 @@
                     <notebook>
                         <page name="page_lines" string="Borrowed Books">
                             <field name="line_ids">
-                                <tree editable="bottom">
+                                <tree>
                                     <field name="book_id" />
-                                    <field name="note" />
                                 </tree>
+                                <form>
+                                    <field name="book_id" />
+                                </form>
                             </field>
                         </page>
                     </notebook>
