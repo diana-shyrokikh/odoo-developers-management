@@ -57,7 +57,7 @@
 
                     <!-- Notebook -->
                     <notebook>
-                        <page name="lines">
+                        <page name="page_lines" string="Borrowed Books">
                             <field name="line_ids">
                                 <tree editable="bottom">
                                     <field name="book_id" />
