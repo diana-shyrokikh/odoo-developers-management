@@ -68,7 +68,9 @@
                         <field name="request_date" />
                         <field name="user_id" />
                         <span colspan="2" />
-                        <field name="close_date" />
+                        <field name="close_date"
+                               attrs="{'invisible':[('state', 'not in', ['done'])]}"
+                        />
                     </group>
 
                     <!-- Notebook -->
