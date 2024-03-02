@@ -16,7 +16,22 @@
         <field name="model">library.checkout</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <!-- To add buttons and status widget -->
+                    <field name="state" invisible="True" />
+                    <button name="button_done"
+                            type="object"
+                            string="Return Books"
+                            states="open"
+                            class="oe_highlight"
+                    />
+                    <field name="stage_id"
+                           widget="statusbar"
+                           options="{'clickable': True, 'fold_field': 'fold'}"
+                    />
+                </header>
                 <sheet>
+                    <!-- To add form content -->
                     <group>
                         <field name="member_id" />
                         <field name="request_date" />
@@ -33,6 +48,7 @@
                         </page>
                     </notebook>
                 </sheet>
+                <!-- Discuss widgets -->
                 <div class="oe_chatter">
                     <field name="message_follower_ids"
                            widget="mail_followers" />

@@ -100,6 +100,18 @@ class Checkout(models.Model):
             }
         }
 
+    def button_done(self):
+        stage = self.env["library.checkout.stage"]
+
+        done_stage = stage.search(
+            [("state", "=", "done")], limit=1
+        )
+
+        for checkout in self:
+            checkout.stage_id = done_stage
+
+        return True
+
     # doesn't work
     # @api.depends("member_id")
     # def _compute_request_date_onchange(self):
