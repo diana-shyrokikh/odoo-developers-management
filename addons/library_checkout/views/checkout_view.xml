@@ -34,7 +34,23 @@
                     <!-- To add form content -->
 
                     <!-- Button box -->
-                    <div class="oe_button_box" name="button_box" />
+                    <div class="oe_button_box" name="button_box">
+                        <!-- Smart buttons will go here... -->
+                        <button type="action"
+                                name="%(action_library_checkout)d"
+                                class="oe_stat_button"
+                                icon="fa-book"
+                                domain="[('member_id', '=', member_id)]"
+                                context="{'default_member_id': member_id}"
+                        >
+                            <field name="count_checkouts"
+                                   string="Checkouts"
+                                   widget="statinfo"
+                            />
+                        </button>
+
+
+                    </div>
 
                     <!-- Header title -->
                     <div class="oe_title">

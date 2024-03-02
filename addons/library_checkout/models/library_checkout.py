@@ -57,6 +57,25 @@ class Checkout(models.Model):
         related="member_id.image_128"
     )
 
+    count_checkouts = fields.Integer(
+        compute="_compute_count_checkouts"
+    )
+
+    def _compute_count_checkouts(self):
+        members = self.mapped("member_id")
+        domain = [
+            ("member_id", "in", members.ids),
+            ("state", "not in", ["done", "cancel"]),
+        ]
+        raw = self.read_group(domain, ["id:count"], ["member_id"])
+        data = {
+            x["member_id"][0]: x["member_id_count"] for x in raw
+        }
+        for checkout in self:
+            checkout.count_checkouts = data.get(
+                checkout.member_id.id, 0
+            )
+
     @api.model
     def create(self, vals):
         # Code before create: should use the 'vals' dict
