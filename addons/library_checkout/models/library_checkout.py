@@ -62,7 +62,8 @@ class Checkout(models.Model):
     )
 
     num_books = fields.Integer(
-        compute="_compute_num_books"
+        compute="_compute_num_books",
+        store=True,
     )
 
     @api.depends("line_ids")

@@ -165,4 +165,16 @@
         </field>
     </record>
 
+    <record id="view_pivot_checkout" model="ir.ui.view">
+        <field name="model">library.checkout</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="stage_id" type="col" />
+                <field name="member_id" />
+                <field name="request_date" interval="week" />
+                <field name="num_books" type="measure" />
+            </pivot>
+        </field>
+    </record>
+
 </odoo>
