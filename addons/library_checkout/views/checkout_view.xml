@@ -137,4 +137,19 @@
             </form>
         </field>
     </record>
+
+    <record id="view_activity_checkout" model="ir.ui.view">
+        <field name="model">library.checkout</field>
+        <field name="arch" type="xml">
+            <activity string="Checkouts">
+                <templates>
+                    <div t-name="activity-box">
+                        <div>
+                            <field name="name" />
+                        </div>
+                    </div>
+                </templates>
+            </activity>
+        </field>
+    </record>
 </odoo>
