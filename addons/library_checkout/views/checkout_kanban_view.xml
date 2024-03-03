@@ -14,12 +14,33 @@
                              }'
                              sum_fields="num_books"
                 />
+                <!-- Field list to ensure is loaded ... -->
                 <templates>
-                    <t t-name="kanban-box">
-                        <div>
-                            <field name="name" />
+                <t t-name="kanban-box">
+                    <div class="oe_kanban_global_click">
+                        <div class="o_dropdown_kanban dropdown">
+                            <!-- Top-right drop down menu ... -->
                         </div>
-                    </t>
+                        <div class="oe_kanban_content">
+                            <div class="o_kanban_record_title">
+                                <!-- Title area ... -->
+                                <field name="name" />
+                            </div>
+                            <div class="o_kanban_record_body">
+                                <!-- Other content area ... -->
+                            </div>
+                            <div class="o_kanban_record_bottom">
+                                <div class="oe_kanban_bottom_left">
+                                    <!-- Left side footer... -->
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                    <!-- Right side footer... -->
+                                </div>
+                            </div> <!-- o_kanban_record_bottom -->
+                            <div class="oe_clear"/>
+                        </div> <!-- oe_kanban_content -->
+                    </div> <!-- oe_kanban_global_click -->
+                </t>
                 </templates>
             </kanban>
         </field>
