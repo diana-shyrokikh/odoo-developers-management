@@ -177,4 +177,15 @@
         </field>
     </record>
 
+    <record id="view_graph_checkout" model="ir.ui.view">
+        <field name="model">library.checkout</field>
+        <field name="arch" type="xml">
+            <graph type="bar">
+                <field name="stage_id" />
+                <field name="num_books" type="measure" />
+            </graph>
+        </field>
+    </record>
+
+
 </odoo>
