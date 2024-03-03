@@ -152,4 +152,17 @@
             </activity>
         </field>
     </record>
+
+    <record id="view_calendar_checkout" model="ir.ui.view">
+        <field name="model">library.checkout</field>
+        <field name="arch" type="xml">
+            <calendar date_start="request_date"
+                      color="user_id"
+            >
+                <field name="member_id" />
+                <field name="stage_id" />
+            </calendar>
+        </field>
+    </record>
+
 </odoo>
