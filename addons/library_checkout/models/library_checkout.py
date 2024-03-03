@@ -61,6 +61,15 @@ class Checkout(models.Model):
         compute="_compute_count_checkouts"
     )
 
+    num_books = fields.Integer(
+        compute="_compute_num_books"
+    )
+
+    @api.depends("line_ids")
+    def _compute_num_books(self):
+        for book in self:
+            book.num_books = len(book.line_ids)
+
     def _compute_count_checkouts(self):
         members = self.mapped("member_id")
         domain = [
