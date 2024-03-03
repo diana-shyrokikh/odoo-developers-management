@@ -18,6 +18,10 @@
                 <filter name="group_user"
                         string="By Member"
                         context="{'group_by': 'member_id'}"/>
+
+                <searchpanel>
+                    <field name="stage_id" select="multi" />
+                </searchpanel>
             </search>
         </field>
     </record>
