@@ -44,7 +44,16 @@
                             <div class="col-3">Publisher Address</div>
                             <div class="col-2">Authors</div>
                         </div>
+                        <!-- Running total: initialize variable -->
+                        <t t-set="missing_count" t-value="0" />
+
                         <t t-foreach="docs" t-as="o">
+                            <!-- Running total: increment and present -->
+                            <t t-set="missing_count"
+                                t-value="missing_count + int(not o.publisher_id)"
+                            />
+                            <p>(accum. <t t-out="missing_count"/>)</p>
+
                             <div class="row">
                                 <!-- Report row content -->
                                 <div class="col-3">
