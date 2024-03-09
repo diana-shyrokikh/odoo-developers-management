@@ -9,6 +9,7 @@
                 <!-- Field list to ensure is loaded ... -->
                 <field name="state" />
                 <field name="color" />
+                <field name="num_books" />
 
                 <progressbar field="kanban_state"
                              colors='{
@@ -76,7 +77,19 @@
                             <div class="oe_kanban_content">
                                 <div class="o_kanban_record_title">
                                     <!-- Title area ... -->
-                                    <field name="name" />
+                                    <t t-set="red_or_black"
+                                       t-value="record.num_books == 0 ? '':'oe_kanban_text_red'"
+                                    />
+                                    <strong t-att-class="red_or_black">
+                                        <field name="name" />
+                                    </strong>
+
+                                    <t t-set="calendar_sign">
+                                        <i class="fa fa-calendar"
+                                           title="Calendar"
+                                        />
+                                    </t>
+                                    <t t-out="calendar_sign" />
                                 </div>
                                 <div class="o_kanban_record_body">
                                     <!-- Other content area ... -->
