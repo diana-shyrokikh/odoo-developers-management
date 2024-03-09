@@ -78,6 +78,15 @@ class Checkout(models.Model):
 
     color = fields.Integer()
 
+    priority = fields.Selection(
+        [
+            ("0", "High"),
+             ("1", "Very High"),
+             ("2", "Critical")
+        ],
+        default="0"
+    )
+
     @api.depends("line_ids")
     def _compute_num_books(self):
         for book in self:

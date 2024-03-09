@@ -93,6 +93,12 @@
                                 <div class="o_kanban_record_bottom">
                                     <div class="oe_kanban_bottom_left">
                                         <!-- Left side footer... -->
+                                        <field name="priority"
+                                               widget="priority"
+                                        />
+                                        <field name="activity_ids"
+                                               widget="kanban_activity"
+                                        />
                                     </div>
                                     <div class="oe_kanban_bottom_right">
                                         <!-- Right side footer... -->
