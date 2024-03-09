@@ -33,7 +33,7 @@
 
     <template id="book_catalog_native">
         <t t-call="library_app.book_catalog"
-           t-lang="res_company.parter_id.lang"
+           t-lang="res_company.partner_id.lang"
         />
     </template>
 
