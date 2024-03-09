@@ -84,6 +84,8 @@
                                         <field name="name" />
                                     </strong>
 
+                                    <t>&amp;nbsp;</t>
+
                                     <t t-set="calendar_sign">
                                         <i class="fa fa-calendar"
                                            title="Calendar"
@@ -102,6 +104,27 @@
                                     <div>
                                         <field name="member_id"
                                                widget="many2one_avatar"/>
+                                    </div>
+
+                                    <div>
+<!--                                        doesn't work :(-->
+                                        <t t-if="record.line_ids">
+                                            <t t-foreach="record.line_ids.raw_value.slice(0, 5)"
+                                               t-as="rec"
+                                            >
+                                                <t t-out="rec" />
+                                                <t t-if="!rec_last">;</t>
+                                                <img t-att-src="kanban_image(
+                                                                    'library.checkout.line',
+                                                                    'book_cover',
+                                                                     rec
+                                                                 )"
+                                                     class="oe_avatar"
+                                                     height="60"
+                                                     alt="Cover"
+                                                />
+                                            </t>
+                                        </t>
                                     </div>
 
                                 </div>

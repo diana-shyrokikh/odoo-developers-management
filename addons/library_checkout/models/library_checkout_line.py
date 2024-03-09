@@ -13,3 +13,5 @@ class CheckoutLine(models.Model):
         required=True
     )
     note = fields.Char("Notes")
+
+    book_cover = fields.Binary(related="book_id.image")
