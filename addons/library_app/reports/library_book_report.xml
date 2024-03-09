@@ -66,7 +66,19 @@
                                          }' />
                                 </div>
                                 <div class="col-2">
-                                    <!-- Render Authors -->
+                                    <!-- Render authors -->
+                                    <ul class="list-unstyled">
+                                        <t t-foreach="o.author_ids" t-as="author">
+                                            <span t-field="author.image_128"
+                                                  t-options="{
+                                                        'widget': 'image',
+                                                        'style': 'max-width: 32px'
+                                                  }"
+                                            />
+                                            <span t-field="author.name" />
+                                        </t>
+                                    </ul>
+
                                 </div>
                             </div>
                         </t>
