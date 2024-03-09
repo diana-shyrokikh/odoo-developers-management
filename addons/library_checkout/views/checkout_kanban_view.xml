@@ -93,10 +93,12 @@
                                 </div>
                                 <div class="o_kanban_record_body">
                                     <!-- Other content area ... -->
-                                    <div>
-    <!--                                    doesn't visible :(-->
-                                        <fields name="request_date" />
+                                    <div t-attf-class="oe_kanban_text_{{record.priority.raw_value &lt; '2'
+                                                       ? 'black' : 'red' }}"
+                                    >
+                                        <field name="request_date"/>
                                     </div>
+
                                     <div>
                                         <field name="member_id"
                                                widget="many2one_avatar"/>
