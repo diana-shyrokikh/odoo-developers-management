@@ -26,5 +26,7 @@
         "views/library_menu.xml",
         "views/book_list_template.xml",
 
+        "reports/library_book_report.xml",
+
     ],
 }
