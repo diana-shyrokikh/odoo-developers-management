@@ -76,6 +76,8 @@ class Checkout(models.Model):
         default="normal"
     )
 
+    color = fields.Integer()
+
     @api.depends("line_ids")
     def _compute_num_books(self):
         for book in self:
