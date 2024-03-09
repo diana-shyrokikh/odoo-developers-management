@@ -6,6 +6,9 @@
         <field name="model">library.checkout</field>
         <field name="arch" type="xml">
             <kanban default_group_by="stage_id">
+                <!-- Field list to ensure is loaded ... -->
+                <field name="state" />
+
                 <progressbar field="kanban_state"
                              colors='{
                                 "done": "success",
@@ -20,6 +23,51 @@
                     <div class="oe_kanban_global_click">
                         <div class="o_dropdown_kanban dropdown">
                             <!-- Top-right drop down menu ... -->
+                            <a class="dropdown-toggle btn"
+                               role="button"
+                               data-toggle="dropdown"
+                               title="Dropdown menu"
+                               href="#"
+                            >
+                                <span class="fa fa-ellipsis-v" />
+                            </a>
+                            <div class="dropdown-menu" role="menu">
+                                <!-- Edit menu option -->
+                                <t t-if="widget.editable">
+                                    <a role="menuitem"
+                                       type="edit"
+                                       class="dropdown-item"
+                                    >
+                                        Edit
+                                    </a>
+                                </t>
+                                <!-- Delete menu option -->
+                                <t t-if="widget.deletable">
+                                    <a role="menuitem"
+                                       type="delete"
+                                       class="dropdown-item"
+                                    >
+                                        Delete
+                                    </a>
+                                </t>
+                                <!-- Separator line -->
+                                <div role="separator"
+                                     class="dropdown-divider"
+                                />
+                                <!-- Color picker option: -->
+                                <ul class="oe_kanban_colorpicker"
+                                    data-field="color"
+                                />
+                                <!-- Set as Done menu option -->
+                                <a t-if="record.state != 'done'"
+                                   role="menuitem"
+                                   class="dropdown-item"
+                                   name="button_done"
+                                   type="object"
+                                >
+                                    Set as Done
+                                </a>
+                            </div>
                         </div>
                         <div class="oe_kanban_content">
                             <div class="o_kanban_record_title">
