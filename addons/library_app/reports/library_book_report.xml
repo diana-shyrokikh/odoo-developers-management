@@ -83,6 +83,17 @@
                             </div>
                         </t>
                         <!-- Report footer content -->
+                        <div class="row">
+                            <div class="col-3">
+                                <t t-out="len(docs)" /> Books
+                            </div>
+                            <div class="col-7" />
+                            <div class="col-2">
+                                <t t-out="len(docs.mapped('author_ids'))" /> Authors
+                            </div>
+
+                        </div>
+
                     </div><!-- container -->
                 </div> <!-- page -->
             </t>
