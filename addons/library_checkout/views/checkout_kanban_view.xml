@@ -106,6 +106,16 @@
                                                widget="many2one_avatar"/>
                                     </div>
 
+                                    <div t-if="record.num_books.raw_value == 0">
+                                        No books!
+                                    </div>
+                                    <div t-elif="record.num_books.raw_value == 1">
+                                        One book
+                                    </div>
+                                    <div t-else="">
+                                        <field name="num_books"/> books
+                                    </div>
+
                                     <div>
 <!--                                        doesn't work :(-->
                                         <t t-if="record.line_ids">
