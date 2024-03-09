@@ -31,6 +31,12 @@
         />
     </record>
 
+    <template id="book_catalog_native">
+        <t t-call="library_app.book_catalog"
+           t-lang="res_company.parter_id.lang"
+        />
+    </template>
+
     <template id="book_catalog">
         <t t-call="web.html_container">
             <t t-call="web.external_layout">
