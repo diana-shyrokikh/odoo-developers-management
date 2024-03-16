@@ -8,8 +8,8 @@
         "portal",
     ],
     "data": [
-        # "security/library_security.xml",
-        # "security/ir.model.access.csv",
+        "security/ir.model.access.csv",
+        "security/library_security.xml",
 
         # "views/checkout_portal_templates.xml",
 
