@@ -14,6 +14,7 @@
         # "views/checkout_portal_templates.xml",
 
         "views/main_templates.xml",
+        "views/portal_templates.xml",
     ],
     "assets": {
         "web.assets_backend": {"library_portal/static/src/css/library.css"},
